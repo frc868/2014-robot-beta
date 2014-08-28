@@ -25,6 +25,7 @@ public class OI {
 	}
 	
 	public void initDriver() {
+		blah();
 		
 	}
 	
