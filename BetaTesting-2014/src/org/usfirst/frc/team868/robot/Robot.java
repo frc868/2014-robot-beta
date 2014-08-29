@@ -19,11 +19,11 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-        // instantiate the command used for the autonomous period
+		System.out.println("Hi--");
     }
 
     public void autonomousInit() {
-        // schedule the autonomous command (example)
+
     }
 
     /**
@@ -33,11 +33,9 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     }
 
-    public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-        // teleop starts running. If you want the autonomous to 
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
+    public void teleopInit() {	
+    	System.out.println("Hi");
+    	(new LoopCommand()).start();
     }
 
     /**

@@ -1,6 +1,9 @@
 package org.usfirst.frc.team868.robot;
 
+import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DigitalOutput;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.command.Command;
 
 public class OI {
 	
@@ -22,6 +25,7 @@ public class OI {
 		initDriver();
 		initTweaker();
 		initSmartDashboard();
+		
 	}
 	
 	public void initDriver() {
