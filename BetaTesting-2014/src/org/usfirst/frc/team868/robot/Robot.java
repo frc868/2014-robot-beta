@@ -19,7 +19,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		System.out.println("Hi--");
+    	
     }
 
     public void autonomousInit() {
@@ -34,8 +34,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {	
-    	System.out.println("Hi");
-    	(new LoopCommand()).start();
+    	
     }
 
     /**
