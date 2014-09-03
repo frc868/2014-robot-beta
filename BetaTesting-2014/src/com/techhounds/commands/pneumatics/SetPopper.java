@@ -3,7 +3,6 @@ package com.techhounds.commands.pneumatics;
 import com.techhounds.commands.CommandBase;
 import com.techhounds.subsystems.CollectorSubsystem;
 import com.techhounds.subsystems.PopperSubsystem;
-import edu.wpi.first.wpilibj.Timer;
 
 /**
  * @author Atif Niyaz
@@ -15,8 +14,6 @@ public class SetPopper extends CommandBase {
     private boolean position;
     private boolean movingArm;
     private boolean toggling;
-    
-    private double initTime;
     
     public SetPopper() {
         collect = CollectorSubsystem.getInstance();
@@ -37,8 +34,6 @@ public class SetPopper extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        
-        initTime = Timer.getFPGATimestamp();
         
         // If position is in ---> false
         // If position is out ---> true

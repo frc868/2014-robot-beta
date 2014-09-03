@@ -19,14 +19,10 @@ public class SetDriveScale extends CommandBase {
     private double magnitude;
     private double rotation;
     
-    private DriveSubsystem drive;
-    
     public static final boolean DRIVER = true;
     public static final boolean TWEAKER = false;
     
     public SetDriveScale(double magnitude, double rotation, boolean isDriver) {
-        
-        drive = DriveSubsystem.getInstance();
         
         this.isDriver = isDriver;
         this.magnitude = Robot.checkRange(magnitude, 0.0, 1.0);
@@ -37,9 +33,9 @@ public class SetDriveScale extends CommandBase {
     protected void initialize() {
         
         if(isDriver) {
-            drive.setDriverScale(magnitude, rotation);
+            DriveSubsystem.setDriverScale(magnitude, rotation);
         } else {
-            drive.setTweakerScale(magnitude, rotation);
+            DriveSubsystem.setTweakerScale(magnitude, rotation);
         }
     }
 

@@ -4,10 +4,8 @@
  */
 package com.techhounds.commands.kicker;
 
-import com.techhounds.RobotConstants;
 import com.techhounds.commands.CommandBase;
 import com.techhounds.subsystems.KickerSubsystem;
-import edu.wpi.first.wpilibj.Timer;
 
 /**
  *

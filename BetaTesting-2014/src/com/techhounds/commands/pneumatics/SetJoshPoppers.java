@@ -15,10 +15,10 @@ import com.techhounds.subsystems.ShooterSubsystem;
  */
 public class SetJoshPoppers extends CommandBase {
     
-    private PopperSubsystem poppers;
+    //private PopperSubsystem poppers;
     
     public SetJoshPoppers() {
-        poppers = PopperSubsystem.getInstance();
+        //poppers = PopperSubsystem.getInstance();
     }
 
     // Called just before this Command runs the first time

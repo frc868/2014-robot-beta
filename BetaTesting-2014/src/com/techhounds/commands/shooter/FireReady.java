@@ -7,9 +7,7 @@ package com.techhounds.commands.shooter;
 
 import com.techhounds.RobotConstants;
 import com.techhounds.commands.pneumatics.CollectorSequence;
-import com.techhounds.commands.pneumatics.SetPopper;
 import com.techhounds.commands.pneumatics.SetStoppers;
-import com.techhounds.subsystems.PopperSubsystem;
 import com.techhounds.subsystems.StopperSubsystem;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;

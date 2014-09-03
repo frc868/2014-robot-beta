@@ -7,7 +7,6 @@ package com.techhounds.commands.driving;
 
 import com.techhounds.commands.CommandBase;
 import com.techhounds.subsystems.DriveSubsystem;
-import com.techhounds.subsystems.GyroSubsystem;
 
 /**
  * Drives the robot forward or backward a specific number of feet.

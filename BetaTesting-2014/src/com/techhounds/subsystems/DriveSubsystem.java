@@ -56,7 +56,6 @@ public class DriveSubsystem extends Subsystem {
     private int rightInfiniteCount = 0;
 
     private double targetDistance = 0;
-    private double targetAngle = 0;
     private double drivePIDTolerance = 0;
 
     private double gyroAdj = 0;
@@ -118,8 +117,7 @@ public class DriveSubsystem extends Subsystem {
                     }
                 },
                 new PIDOutput() {
-                    private double lastSteer = 0;
-                    
+
                     public void pidWrite(double output) {
                         //double steer = Math.max(-0.4, Math.min(0.4, gyroAdj));
                         //SmartDashboard.putNumber("Angle Error", gyroPID.getSetpoint() - gyro.getRawAngle());
@@ -250,8 +248,6 @@ public class DriveSubsystem extends Subsystem {
     public void rotateToAngle(double angle) {
 
         stopDriveWithEncoder();
-
-        this.targetAngle = angle;
 
         gyroPID.setSetpoint(angle);
         gyroPID.enable();

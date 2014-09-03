@@ -8,7 +8,6 @@ package com.techhounds.commands.shooter;
 import com.techhounds.RobotConstants;
 import com.techhounds.commands.kicker.SetKickerWheels;
 import com.techhounds.commands.pneumatics.ForceCompressorState;
-import com.techhounds.commands.pneumatics.SetPopper;
 import com.techhounds.commands.pneumatics.SetPopperOnly;
 import com.techhounds.commands.pneumatics.SetStoppers;
 import com.techhounds.subsystems.PopperSubsystem;

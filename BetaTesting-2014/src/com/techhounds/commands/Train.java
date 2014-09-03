@@ -7,14 +7,8 @@ package com.techhounds.commands;
 
 import com.techhounds.RobotConstants;
 import com.techhounds.commands.kicker.SetKickerWheels;
-import com.techhounds.commands.pneumatics.SetCollector;
-import com.techhounds.commands.pneumatics.SetPopper;
 import com.techhounds.commands.pneumatics.SetStoppers;
-import com.techhounds.commands.shooter.SetShooterPower;
 import com.techhounds.commands.shooter.SetShooterRPS;
-import com.techhounds.subsystems.CollectorSubsystem;
-import com.techhounds.subsystems.KickerSubsystem;
-import com.techhounds.subsystems.PopperSubsystem;
 import com.techhounds.subsystems.StopperSubsystem;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
