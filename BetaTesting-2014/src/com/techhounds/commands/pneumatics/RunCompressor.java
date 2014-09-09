@@ -12,35 +12,35 @@ import com.techhounds.subsystems.CompressorSubsystem;
  * @author Atif Niyaz
  */
 public class RunCompressor extends CommandBase {
-    
-    private CompressorSubsystem compressor;
-    
-    public RunCompressor() {
-        compressor = CompressorSubsystem.getInstance();
-        requires(compressor);
-        setInterruptible(false);
-    }
 
-    // Called just before this Command runs the first time
-    protected void initialize() {}
+	private CompressorSubsystem compressor;
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-       if(compressor.isMaxPressure() 
-               //|| CompressorSubsystem.getIsDrivingFast() 
-               || CompressorSubsystem.getIsShooting())
-           compressor.stop();
-       else
-           compressor.start();
-    }
+	public RunCompressor() {
+		compressor = CompressorSubsystem.getInstance();
+		requires(compressor);
+		setInterruptible(false);
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() { return false; }
+	protected void initialize() {
+		
+	}
 
-    // Called once after isFinished returns true
-    protected void end() {}
+	protected void execute() {
+		if (compressor.isMaxPressure() || CompressorSubsystem.getIsShooting())
+			compressor.stop();
+		else
+			compressor.start();
+	}
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {}
+	protected boolean isFinished() {
+		return false;
+	}
+
+	protected void end() {
+		
+	}
+
+	protected void interrupted() {
+		
+	}
 }

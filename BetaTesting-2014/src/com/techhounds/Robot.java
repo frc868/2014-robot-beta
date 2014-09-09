@@ -68,7 +68,7 @@ public class Robot extends IterativeRobot {
     }
     
     public static boolean isFinal(){
-        return true;//Preferences.getInstance().getBoolean("RobotFinal", true);
+        return false;//Preferences.getInstance().getBoolean("RobotFinal", true);
     }
     
     public void robotInit() {

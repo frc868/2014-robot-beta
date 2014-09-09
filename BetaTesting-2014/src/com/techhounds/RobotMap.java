@@ -45,8 +45,9 @@ public class RobotMap {
     
     public static class Compressor {
         
-        public static final int COMPRESSOR_SENSOR = 4;
-        public static final int COMPRESSOR_RELAY = 0;
+        //public static final int COMPRESSOR_SENSOR = 4;
+        //public static final int COMPRESSOR_RELAY = 0;
+        public static final int COMPRESSOR_PCM = 0;
     }
     
     public static class Gyro {

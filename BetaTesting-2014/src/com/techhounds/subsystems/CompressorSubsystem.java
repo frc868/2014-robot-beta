@@ -7,6 +7,8 @@ package com.techhounds.subsystems;
 
 import com.techhounds.RobotMap;
 import com.techhounds.commands.pneumatics.RunCompressor;
+
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -19,18 +21,23 @@ public class CompressorSubsystem extends Subsystem {
     
     private static CompressorSubsystem instance;
     
-    private Relay compressor; 
-    private DigitalInput reader;
+//    private Relay compressor; 
+//    private DigitalInput reader;
+
+	private Compressor c;
     
     private static boolean isShooting;
     private static boolean isDrivingFast;
     
+    
     public CompressorSubsystem() {
         super("COMPRESSOR SUBSYSTEM");
+    
+        c = new Compressor(RobotMap.Compressor.COMPRESSOR_PCM);
         
-        compressor = new Relay(RobotMap.Compressor.COMPRESSOR_RELAY);
-        compressor.setDirection(Relay.Direction.kForward);
-        reader = new DigitalInput(RobotMap.Compressor.COMPRESSOR_SENSOR);
+//        compressor = new Relay(RobotMap.Compressor.COMPRESSOR_RELAY);
+//        compressor.setDirection(Relay.Direction.kForward);
+//        reader = new DigitalInput(RobotMap.Compressor.COMPRESSOR_SENSOR);
     }
     
     public static CompressorSubsystem getInstance() {
@@ -40,15 +47,17 @@ public class CompressorSubsystem extends Subsystem {
     }
     
     public void start() {
-        compressor.set(Relay.Value.kOn);
+//    	compressor.set(Relay.Value.kOn);
     }
     
     public void stop() {
-        compressor.set(Relay.Value.kOff);
+    	c.stop();
+//        compressor.set(Relay.Value.kOff);
     }
     
     public boolean isMaxPressure() {
-        return reader.get();
+    	return c.getPressureSwitchValue();
+//        return reader.get();
     }
     
     public static void setIsDrivingFast(boolean fast) {
@@ -71,6 +80,8 @@ public class CompressorSubsystem extends Subsystem {
 
         // Compressor is on
         SmartDashboard.putBoolean("Compressor On", isMaxPressure());
+        SmartDashboard.putBoolean("Pressure Switch", c.getPressureSwitchValue());
+        SmartDashboard.putNumber("Compressor Current", c.getCompressorCurrent());
     }
     
     public void initDefaultCommand() {
