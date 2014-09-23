@@ -48,7 +48,7 @@ public class SetPopper extends CommandBase {
         }else{ // If the collector is not out
             if (popper.getPopperPosition() == PopperSubsystem.OUT){ // If the popper is out
                 popper.setPopperPosition(position); // Keep it out or put it in
-            }else{                                                   // If the popper is in
+            }else{// If the popper is in
                 movingArm = true;// The colletor will move
             }
         }
@@ -57,7 +57,7 @@ public class SetPopper extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (movingArm){ // If the collector can move
-            System.out.println("--------------4");
+            //System.out.println("--------------4");
             (new CollectorSequence()).start();
         }
     }

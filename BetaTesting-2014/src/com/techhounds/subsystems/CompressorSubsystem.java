@@ -47,6 +47,7 @@ public class CompressorSubsystem extends Subsystem {
     }
     
     public void start() {
+    	c.start();
 //    	compressor.set(Relay.Value.kOn);
     }
     
@@ -79,8 +80,8 @@ public class CompressorSubsystem extends Subsystem {
     public void updateSmartDashboard() {
 
         // Compressor is on
-        SmartDashboard.putBoolean("Compressor On", isMaxPressure());
-        SmartDashboard.putBoolean("Pressure Switch", c.getPressureSwitchValue());
+        SmartDashboard.putBoolean("Compressor On", c.enabled());
+        SmartDashboard.putBoolean("Compressor Pressure Switch", isMaxPressure());
         SmartDashboard.putNumber("Compressor Current", c.getCompressorCurrent());
     }
     

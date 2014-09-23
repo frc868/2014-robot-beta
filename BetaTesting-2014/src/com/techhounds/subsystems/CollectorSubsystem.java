@@ -12,16 +12,18 @@ public class CollectorSubsystem extends Subsystem {
     
     private static CollectorSubsystem instance;
     
-    private Solenoid sole1;
-    private Solenoid sole2;
+//    private Solenoid sole1;
+//    private Solenoid sole2;
+    private Solenoid sole;
     
     public static boolean UP = true;
     public static boolean COLLECTING = false;
     
     private CollectorSubsystem() {
         super("Collector Subsystem");
-        sole1 = new Solenoid(RobotMap.Pneumatics.COLLECTOR_1);
-        sole2 = new Solenoid(RobotMap.Pneumatics.COLLECTOR_2);
+//        sole1 = new Solenoid(RobotMap.Pneumatics.COLLECTOR_1);
+//        sole2 = new Solenoid(RobotMap.Pneumatics.COLLECTOR_2);
+        sole = new Solenoid(RobotMap.Pneumatics.COLLECTOR);
     }
 
     public static CollectorSubsystem getInstance() {
@@ -35,12 +37,14 @@ public class CollectorSubsystem extends Subsystem {
     }
     
     public boolean getCurrentPosition() {
-        return sole1.get();
+    	return sole.get();
+//        return sole1.get();
     }
     
     public void setPosition(boolean in) {
-        sole1.set(in);
-        sole2.set(!in);
+    	sole.set(in);
+//        sole1.set(in);
+//        sole2.set(!in);
     }
     
     public void initDefaultCommand() {

@@ -70,9 +70,10 @@ public class DriveSubsystem extends Subsystem {
 
         gyro = GyroSubsystem.getInstance();
 
+        int lmChannel = RobotMap.Drive.LEFT_MOTORS;
+        SpeedController lmSpeedController = Robot.createSpeedController(lmChannel, "DRIVE SUBSYSTEM", "LEFT MOTORS");
         leftMotors = new MultiMotor(
-                new SpeedController[]{
-                    Robot.createSpeedController(RobotMap.Drive.LEFT_MOTORS, "DRIVE SUBSYSTEM", "LEFT MOTORS")},
+                new SpeedController[]{ lmSpeedController },
                 new boolean[]{false});
         rightMotors = new MultiMotor(
                 new SpeedController[]{

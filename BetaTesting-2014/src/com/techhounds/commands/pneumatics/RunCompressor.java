@@ -8,6 +8,8 @@ package com.techhounds.commands.pneumatics;
 import com.techhounds.commands.CommandBase;
 import com.techhounds.subsystems.CompressorSubsystem;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  * @author Atif Niyaz
  */
@@ -26,10 +28,13 @@ public class RunCompressor extends CommandBase {
 	}
 
 	protected void execute() {
+		//System.out.println("Compressor:" + compressor.isMaxPressure());
 		if (compressor.isMaxPressure() || CompressorSubsystem.getIsShooting())
 			compressor.stop();
 		else
 			compressor.start();
+		
+		compressor.updateSmartDashboard();
 	}
 
 	protected boolean isFinished() {

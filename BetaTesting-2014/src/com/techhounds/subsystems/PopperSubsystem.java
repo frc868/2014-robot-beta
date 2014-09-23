@@ -44,9 +44,9 @@ public class PopperSubsystem extends Subsystem {
     public void updateSmartDashboard() {
         
         // Update Position of Popper
-        SmartDashboard.putBoolean("Popper In", !getPopperPosition());
-    }
-
+        //SmartDashboard.putBoolean("Popper In", !getPopperPosition());
+    }    
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
