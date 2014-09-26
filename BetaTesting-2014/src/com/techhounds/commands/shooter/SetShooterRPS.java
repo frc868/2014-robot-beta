@@ -26,8 +26,7 @@ public class SetShooterRPS extends CommandBase {
     }
     
     public SetShooterRPS(double frontRPS, double rearRPS, boolean isAdjustment) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+    	
         this.frontRPS = frontRPS;
         this.rearRPS = rearRPS;
         this.isAdjustment = isAdjustment;
@@ -43,7 +42,6 @@ public class SetShooterRPS extends CommandBase {
         requires(backLeftShooter);
     }
 
-    // Called just before this Command runs the first time
     protected void initialize() {
         double flRPS = 0;
         double frRPS = 0;
@@ -62,6 +60,7 @@ public class SetShooterRPS extends CommandBase {
         backLeftShooter.setGoalRPS(rearRPS + blRPS);
         backRightShooter.setGoalRPS(rearRPS + brRPS);
         
+        /*
         if(frontRPS + flRPS <= 0.0) {
             frontLeftShooter.stop();
         }
@@ -77,6 +76,7 @@ public class SetShooterRPS extends CommandBase {
         if(rearRPS + brRPS <= 0.0) {
             backRightShooter.stop();
         }
+        */
     }
 
     // Called repeatedly when this Command is scheduled to run

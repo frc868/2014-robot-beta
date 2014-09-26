@@ -15,7 +15,7 @@ public class RobotConstants {
         
         // Subsystem Debug Info
         public static final boolean DRIVE_DEBUG_INFO = true;
-        public static final boolean SHOOTER_DEBUG_INFO = false;
+        public static final boolean SHOOTER_DEBUG_INFO = true;
         
         // Command Buttons
         public static final boolean ROTATION_BUTTONS = false;

@@ -140,6 +140,12 @@ public class ShooterSubsystem extends PIDSubsystem{
     }
     
     public void setGoalRPS(double rps){
+    	if (rps <= 0){
+    		setSetpoint(0);
+    		setPower(0);
+    		disable();
+    		return;
+    	}
         setSetpoint(rps);
         timer.reset();
         timer.start();
@@ -244,6 +250,7 @@ public class ShooterSubsystem extends PIDSubsystem{
         
         if (!RobotConstants.Debug.SHOOTER_DEBUG_INFO) return;
         SmartDashboard.putNumber("Shooter " + name + " Power", getPower());
+        SmartDashboard.putNumber("Shooter " + name + "Enc Period", encoder.getPeriod());
 
     }
     
