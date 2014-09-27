@@ -37,11 +37,11 @@ public class RobotMap {
     
     public static class Pneumatics {
         
-    	public static final int COLLECTOR = 3;
+    	public static final int COLLECTOR = 0;
 //        public static final int COLLECTOR_1 = 3;
 //        public static final int COLLECTOR_2 = 3;
-        public static final int POPPER = 4;
-        public static final int STOPPER = 5;
+        public static final int POPPER = 3;
+        public static final int STOPPER = 1;
     }
     
     public static class Compressor {

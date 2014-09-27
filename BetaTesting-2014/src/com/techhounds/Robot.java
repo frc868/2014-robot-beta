@@ -117,7 +117,6 @@ public class Robot extends IterativeRobot {
         (new ForceCompressorState(false)).start();
         (new LockShooterPower(false)).start();
         (new StopShooter()).start();
-        (new DisableDriveWithGyro()).start();
         
         System.out.println("*******\n"
                             + "TEAM 868 CAN TELEOP NOW!\n"

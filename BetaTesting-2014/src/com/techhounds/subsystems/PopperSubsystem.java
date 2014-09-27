@@ -34,6 +34,7 @@ public class PopperSubsystem extends Subsystem {
     }
     
     public void setPopperPosition(boolean place) {
+    	boolean pos = getPopperPosition();
         sole.set(place);
     }
     
