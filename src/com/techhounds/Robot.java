@@ -41,9 +41,6 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  * directory.
  */
 public class Robot extends IterativeRobot {
-<<<<<<< HEAD
-	//Fail branch
->>>>>>> FAIL
     public static boolean finalRobot;
     
     private Command auton;
