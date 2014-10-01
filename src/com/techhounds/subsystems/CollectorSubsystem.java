@@ -1,6 +1,7 @@
 package com.techhounds.subsystems;
 
 import com.techhounds.RobotMap;
+
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -16,8 +17,8 @@ public class CollectorSubsystem extends Subsystem {
 //    private Solenoid sole2;
     private Solenoid sole;
     
-    public static boolean UP = true;
-    public static boolean COLLECTING = false;
+    public static boolean UP = false;
+    public static boolean COLLECTING = true;
     
     private CollectorSubsystem() {
         super("Collector Subsystem");
@@ -42,6 +43,7 @@ public class CollectorSubsystem extends Subsystem {
     }
     
     public void setPosition(boolean in) {
+    	System.out.println("Collector set: " + in);
     	sole.set(in);
 //        sole1.set(in);
 //        sole2.set(!in);

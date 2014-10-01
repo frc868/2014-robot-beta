@@ -43,7 +43,7 @@ public class StopperSubsystem extends Subsystem {
     public void updateSmartDashboard() {
         
         // Update the Position of the Stopper
-        SmartDashboard.putBoolean("Stopper Out", !getStopperPosition());
+        //SmartDashboard.putBoolean("Stopper Out", !getStopperPosition());
     }
     
     public void initDefaultCommand() {

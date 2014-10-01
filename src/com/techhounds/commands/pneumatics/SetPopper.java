@@ -15,6 +15,9 @@ public class SetPopper extends CommandBase {
     private boolean movingArm;
     private boolean toggling;
     
+    private boolean popPos;
+    private boolean colPos;
+    
     public SetPopper() {
         collect = CollectorSubsystem.getInstance();
         popper = PopperSubsystem.getInstance();
@@ -35,18 +38,21 @@ public class SetPopper extends CommandBase {
     // Called just before this Command runs the first time
     protected void initialize() {
         
+        popPos = popper.getPopperPosition();
+        colPos = collect.getCurrentPosition();
+        
         // If position is in ---> false
         // If position is out ---> true
         
         if(toggling) // If we are toggling
-            position = !popper.getPopperPosition();
+            position = !popPos;
         
         movingArm = false;
         
-        if (collect.getCurrentPosition() == CollectorSubsystem.COLLECTING){ // If the collector is out
+        if (colPos == CollectorSubsystem.COLLECTING){ // If the collector is out
             popper.setPopperPosition(position);     // Popper can be set any position
         }else{ // If the collector is not out
-            if (popper.getPopperPosition() == PopperSubsystem.OUT){ // If the popper is out
+            if (popPos == PopperSubsystem.OUT){ // If the popper is out
                 popper.setPopperPosition(position); // Keep it out or put it in
             }else{// If the popper is in
                 movingArm = true;// The colletor will move

@@ -401,15 +401,15 @@ public class DriveSubsystem extends Subsystem {
         DRIVER_MAGNITUDE_MULTIPLIER = magnitude;
         DRIVER_ROTATION_MULTIPLIER = rotation;
     }
-
+    
     public void updateSmartDashboard() {
         
-        if (!RobotConstants.Debug.DRIVE_DEBUG_INFO) return;
+        //if (!RobotConstants.Debug.DRIVE_DEBUG_INFO) return;
         
         SmartDashboard.putNumber("Power", (getLeftPower() + getRightPower()) / 2.0);
         SmartDashboard.putNumber("LeftPower", getLeftPower());
         SmartDashboard.putNumber("RightPower", getRightPower());
-
+        
         SmartDashboard.putNumber("Right Distance", getRightDistance());
         SmartDashboard.putNumber("Left Distance", getLeftDistance());
         SmartDashboard.putNumber("Distance", getAvgDistance());

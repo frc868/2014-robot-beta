@@ -32,9 +32,14 @@ public class SetCollector extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        if (toggling)
-            position = !collect.getCurrentPosition();
-        collect.setPosition(position);
+    	System.out.println("Init Set Collector");
+        if (toggling){
+        	System.out.println("Toggle Set Collector");
+            collect.toggleCollector();
+        }else{
+        	System.out.println("Position Set Collector");
+        	collect.setPosition(position);
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -67,6 +67,7 @@ public class ShooterSubsystem extends PIDSubsystem{
         motor = Robot.createSpeedController(port, "Shooter", name);
         inverted = invert;
         encoder = new Counter(counterPort);
+        encoder.setMaxPeriod(Double.POSITIVE_INFINITY);
         this.name = name;
         timer = new Timer();
     }

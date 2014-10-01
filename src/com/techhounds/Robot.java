@@ -41,8 +41,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	//Test
-	//Test2
+<<<<<<< HEAD
+	//Fail branch
+>>>>>>> FAIL
     public static boolean finalRobot;
     
     private Command auton;
@@ -118,7 +119,6 @@ public class Robot extends IterativeRobot {
         (new ForceCompressorState(false)).start();
         (new LockShooterPower(false)).start();
         (new StopShooter()).start();
-        (new DisableDriveWithGyro()).start();
         
         System.out.println("*******\n"
                             + "TEAM 868 CAN TELEOP NOW!\n"
