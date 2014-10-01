@@ -17,8 +17,8 @@ public class PopperSubsystem extends Subsystem {
    
     private static PopperSubsystem instance;
     
-    public static boolean IN = false;
-    public static boolean OUT = true;
+    public static boolean IN = true;
+    public static boolean OUT = false;
     
     private Solenoid sole;
     
