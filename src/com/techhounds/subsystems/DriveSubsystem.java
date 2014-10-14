@@ -207,8 +207,6 @@ public class DriveSubsystem extends Subsystem {
         } else {
             driveTank();
         }
-
-        CompressorSubsystem.setIsDrivingFast(false);
     }
 
     public void driveWithEncoder(double distance) {

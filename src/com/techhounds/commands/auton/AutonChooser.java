@@ -8,8 +8,6 @@ package com.techhounds.commands.auton;
 import com.techhounds.OI;
 import com.techhounds.commands.auton.options.DoNothing;
 import com.techhounds.commands.auton.options.MoveIntoZone;
-import com.techhounds.commands.auton.options.OneBallAuton;
-import com.techhounds.commands.auton.options.TwoBallAuton;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
@@ -24,8 +22,6 @@ public class AutonChooser extends CommandGroup {
     public static Command getSelected() {
         
         Command [] choices = new Command [] {
-            new TwoBallAuton(),
-            new OneBallAuton(),
             new MoveIntoZone(),
             new DoNothing()
         };

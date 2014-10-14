@@ -13,11 +13,7 @@ import com.techhounds.commands.CommandBase;
 import com.techhounds.commands.UpdateDashboard;
 import com.techhounds.commands.auton.AutonChooser;
 import com.techhounds.commands.driving.DisableDriveWithGyro;
-import com.techhounds.commands.pneumatics.ForceCompressorState;
-import com.techhounds.commands.shooter.LockShooterPower;
-import com.techhounds.commands.shooter.StopShooter;
 import com.techhounds.subsystems.CollectorSubsystem;
-import com.techhounds.subsystems.CompressorSubsystem;
 import com.techhounds.subsystems.DriveSubsystem;
 import com.techhounds.subsystems.GyroSubsystem;
 import com.techhounds.subsystems.KickerSubsystem;
@@ -90,9 +86,6 @@ public class Robot extends IterativeRobot {
         // Schedule the Auton Commands
         auton = AutonChooser.getSelected();
         
-        CompressorSubsystem.setIsDrivingFast(false);
-        CompressorSubsystem.setIsShooting(true);
-        
         auton.start();
         
         System.out.println("*******\n"
@@ -113,9 +106,6 @@ public class Robot extends IterativeRobot {
             auton.cancel();
         
         (new DisableDriveWithGyro()).start();
-        (new ForceCompressorState(false)).start();
-        (new LockShooterPower(false)).start();
-        (new StopShooter()).start();
         
         System.out.println("*******\n"
                             + "TEAM 868 CAN TELEOP NOW!\n"
@@ -130,7 +120,6 @@ public class Robot extends IterativeRobot {
         ShooterSubsystem.getRightRear();
         CollectorSubsystem.getInstance();
         PopperSubsystem.getInstance();
-        CompressorSubsystem.getInstance();
         StopperSubsystem.getInstance();
         KickerSubsystem.getInstance();
         GyroSubsystem.getInstance();

@@ -6,7 +6,6 @@
 package com.techhounds.commands;
 
 import com.techhounds.subsystems.CollectorSubsystem;
-import com.techhounds.subsystems.CompressorSubsystem;
 import com.techhounds.subsystems.DriveSubsystem;
 import com.techhounds.subsystems.GyroSubsystem;
 import com.techhounds.subsystems.KickerSubsystem;
@@ -40,7 +39,6 @@ public class UpdateDashboard extends CommandBase {
            
             // Update Smart Dashboard for each Subsystem
             CollectorSubsystem.getInstance().updateSmartDashboard();
-            CompressorSubsystem.getInstance().updateSmartDashboard();
             DriveSubsystem.getInstance().updateSmartDashboard();
             GyroSubsystem.getInstance().updateSmartDashboard();
             KickerSubsystem.getInstance().updateSmartDashboard();
