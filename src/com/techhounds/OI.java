@@ -8,7 +8,6 @@ import com.techhounds.commands.driving.DriveWithEncoder;
 import com.techhounds.commands.driving.DriveWithEncoderAndGyro;
 import com.techhounds.commands.driving.DriveWithGyro;
 import com.techhounds.commands.driving.RotateToAngle;
-import com.techhounds.subsystems.CollectorSubsystem;
 import com.techhounds.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -136,8 +135,6 @@ public class OI {
             SmartDashboard.putData("Disable Gyro", new DisableDriveWithGyro());
 
             SmartDashboard.putData("Drive Subsystem", DriveSubsystem.getInstance());
-            
-            SmartDashboard.putData("Colletor Subsystem", CollectorSubsystem.getInstance());
         }
     }
     public double getDriverRightXAxis(){

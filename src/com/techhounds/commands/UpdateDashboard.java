@@ -5,13 +5,8 @@
  */
 package com.techhounds.commands;
 
-import com.techhounds.subsystems.CollectorSubsystem;
 import com.techhounds.subsystems.DriveSubsystem;
 import com.techhounds.subsystems.GyroSubsystem;
-import com.techhounds.subsystems.KickerSubsystem;
-import com.techhounds.subsystems.PopperSubsystem;
-import com.techhounds.subsystems.ShooterSubsystem;
-import com.techhounds.subsystems.StopperSubsystem;
 import edu.wpi.first.wpilibj.Timer;
 
 /**
@@ -38,18 +33,8 @@ public class UpdateDashboard extends CommandBase {
         if(timer.get() >= .3) {
            
             // Update Smart Dashboard for each Subsystem
-            CollectorSubsystem.getInstance().updateSmartDashboard();
             DriveSubsystem.getInstance().updateSmartDashboard();
             GyroSubsystem.getInstance().updateSmartDashboard();
-            KickerSubsystem.getInstance().updateSmartDashboard();
-            PopperSubsystem.getInstance().updateSmartDashboard();
-            StopperSubsystem.getInstance().updateSmartDashboard();
-            
-            // Each Shooter Wheel has an Instance
-            ShooterSubsystem.getLeftFront().updateDashboard();
-            ShooterSubsystem.getLeftRear().updateDashboard();
-            ShooterSubsystem.getRightFront().updateDashboard();
-            ShooterSubsystem.getRightRear().updateDashboard();
             
             // Reset timer
             timer.reset();

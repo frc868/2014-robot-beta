@@ -13,13 +13,8 @@ import com.techhounds.commands.CommandBase;
 import com.techhounds.commands.UpdateDashboard;
 import com.techhounds.commands.auton.AutonChooser;
 import com.techhounds.commands.driving.DisableDriveWithGyro;
-import com.techhounds.subsystems.CollectorSubsystem;
 import com.techhounds.subsystems.DriveSubsystem;
 import com.techhounds.subsystems.GyroSubsystem;
-import com.techhounds.subsystems.KickerSubsystem;
-import com.techhounds.subsystems.PopperSubsystem;
-import com.techhounds.subsystems.ShooterSubsystem;
-import com.techhounds.subsystems.StopperSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -114,14 +109,6 @@ public class Robot extends IterativeRobot {
     
     private void initSubsystems(){
         DriveSubsystem.getInstance();
-        ShooterSubsystem.getLeftFront();
-        ShooterSubsystem.getLeftRear();
-        ShooterSubsystem.getRightFront();
-        ShooterSubsystem.getRightRear();
-        CollectorSubsystem.getInstance();
-        PopperSubsystem.getInstance();
-        StopperSubsystem.getInstance();
-        KickerSubsystem.getInstance();
         GyroSubsystem.getInstance();
     }
 
